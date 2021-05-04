@@ -6,24 +6,22 @@ public class Skill {
 	public Skill() {
 		
 	}
-	public void setName(String name) {
-		this.name=name;
-	}
 	
-	public String getterName() {
-		return this.name;
+	public String getName() {
+		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		return "Skill [name=" + name + "]";
 	}
 	
 	
-	
-	/*public String toString() {
-		return '['+ "le skill est" + this.name + ']';
-	}*/
-	
+
 	
 	
 }
