@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +29,7 @@ public class DeveloperController {
 		developer.setAlias(alias);
 		developer.setName("KHUU");
 		developer.setFirstname("Christine");
-		LocalDate date1 = LocalDate.parse("1980-07-09"); 
+		LocalDate date1 = LocalDate.of(1980,07,05); 
 		developer.setBirthdate(date1);
 		return developer;
 	}
@@ -40,4 +41,15 @@ public class DeveloperController {
 		developer1.setBirthdate(birthdate);
 		System.out.println(developer1);
 	}
+	 @PatchMapping("developer/{pseudo}/birth-date")
+	    public void updateBirthDate(@PathVariable("pseudo") String pseudo,
+		    @RequestBody Developer partial) {
+		System.out.println("Partial object=" + partial);
+		Developer developer = new Developer();
+		developer.setAlias(pseudo); // Variable de chemin
+		developer.setFirstname(partial.getFirstname()); // Anomalie
+		developer.setName("MARSHALL");
+		developer.setBirthdate(partial.getBirthdate()); // JSON
+		System.out.println("New object=" + developer);
+	    }
 }

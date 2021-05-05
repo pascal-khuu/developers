@@ -1,6 +1,10 @@
 package fr.formation.developers.domain;
 
+import javax.validation.constraints.NotNull;
+
 public class Skill {
+	
+	@NotNull
 	private String name;
 	
 	public Skill() {
