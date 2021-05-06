@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.formation.developers.domain.Team;
+import fr.formation.developers.domain.TeamName;
 
 @RestController
 @RequestMapping("/team")
@@ -38,8 +39,9 @@ public class TeamController {
 	}
 	
 	@DeleteMapping
-	public void deleteName( @RequestBody Team team) {
-		System.out.println("the team with name "+team.getName() + " is deleted. ");
+	public void deleteName( @RequestBody TeamName name) {
+		System.out.println("the team with name "+ name.getName() + " is deleted. ");
+		
 	}
 
 
