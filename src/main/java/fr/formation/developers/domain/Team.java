@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 public class Team {
 	@NotNull 
-	@Size(min=0,max=255)
+	@Size(min=1,max=255)
 	private String name;
 	@NotNull
 	private boolean agility;

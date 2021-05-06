@@ -1,6 +1,11 @@
 package fr.formation.developers.domain;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class TeamName {
+	@NotNull
+	@Size(min=1,max=255)
 	private String name;
 	public TeamName() {
 		

@@ -39,7 +39,7 @@ public class TeamController {
 	}
 	
 	@DeleteMapping
-	public void deleteName( @RequestBody TeamName name) {
+	public void deleteName(@Valid @RequestBody TeamName name) {
 		System.out.println("the team with name "+ name.getName() + " is deleted. ");
 		
 	}

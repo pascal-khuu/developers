@@ -36,13 +36,7 @@ public class DeveloperController {
 		return developer;
 	}
 	
-	@GetMapping ("/developer/{pseudo}/{birthdate}")
-	public void create(@PathVariable("pseudo") String pseudo,@PathVariable("birthdate") LocalDate birthdate) {
-		DeveloperCreate developer1 = new DeveloperCreate();
-		developer1.setPseudo(pseudo);
-		developer1.setBirthdate(birthdate);
-		System.out.println(developer1);
-	}
+	
 	 @PatchMapping("developer/{pseudo}/birth-date")
 	    public void updateBirthDate(@PathVariable("pseudo") String pseudo,
 		   @Valid @RequestBody DeveloperUpdate partial) {
