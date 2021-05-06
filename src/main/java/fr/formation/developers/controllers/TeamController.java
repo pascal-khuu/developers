@@ -13,39 +13,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.formation.developers.domain.Equipe;
+import fr.formation.developers.domain.Team;
 
 @RestController
-@RequestMapping("/equipe")
-public class EquipeController {
-	//list of equips
-	List <Equipe> equipes = new ArrayList<Equipe>();
+@RequestMapping("/team")
+public class TeamController {
+
 
 	@PostMapping
 	//create a team with all its attribute
-	public void create (@Valid @RequestBody Equipe equipe) {
-		System.out.println(equipe);
-		equipes.add(equipe);
+	public void create (@Valid @RequestBody Team team) {
+		System.out.println(team);
+		
+	}
+	
+	@GetMapping("{name}")	
+	public Team get(@PathVariable("name")String ui) {
+		Team team = new Team();
+		team.setName(ui);
+		team.setAgility(true);
+
+		return team;
+		
+	}
+	
+	@DeleteMapping
+	public void deleteName( @RequestBody Team team) {
+		System.out.println("the team with name "+team.getName() + " is deleted. ");
 	}
 
 
 
-	@GetMapping
-	public List <Equipe> GetEquipes () {
-		return equipes;
-	}
-
-	//delete by the name
-	@DeleteMapping("/delete/{nom}")
-	public void delete (@Valid @PathVariable String nom) {
-		int index=0;
-		for (Equipe equipe: equipes ) {
-			if (equipe.getNom().equals(nom)) {
-				index=equipes.indexOf(equipe);
-			}
-
-		}
-		equipes.remove(index);
-
-	}
+	
 }

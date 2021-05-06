@@ -3,27 +3,33 @@ package fr.formation.developers.domain;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Developer {
+import javax.validation.constraints.NotNull;
+
+public class DeveloperCreate {
 	// fields 
-	String alias;
+	@NotNull
+	String pseudo;
+	@NotNull
 	String name;
+	@NotNull
 	String firstname;
+	@NotNull
 	LocalDate birthdate;
 	
 	
 	// constructor
-	public Developer() {
+	public DeveloperCreate() {
 	}
 
 	// getters && Setters
 
-	public String getAlias() {
-		return alias;
+	public String getPseudo() {
+		return pseudo;
 	}
 
 
-	public void setAlias(String alias) {
-		this.alias = alias;
+	public void setPseudo(String alias) {
+		this.pseudo = alias;
 	}
 
 
@@ -58,7 +64,7 @@ public class Developer {
 
 	@Override
 	public String toString() {
-		return "Developer [alias=" + alias + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthdate
+		return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthdate
 				+ "]";
 	}
 	
