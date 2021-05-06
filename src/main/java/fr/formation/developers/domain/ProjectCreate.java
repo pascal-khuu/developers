@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class ProjectCreate {
-	//Créer un projet avec les champs name, description, dateBegin et moneyAnnual
+	// Champs de la classe ProjectCreate
 	@NotNull
 	@Size(min=1,max=255)
 	private String name;
@@ -19,6 +19,13 @@ public class ProjectCreate {
 	@NotNull
 	@Min(value=1)
 	private int moneyAnnual;
+	
+	// Constructeur de la classe ProjectCreate
+	public ProjectCreate() {
+		
+	}
+	
+	// Getters et Setters de la classe ProjectCreate
 	public String getName() {
 		return name;
 	}
@@ -43,6 +50,7 @@ public class ProjectCreate {
 	public void setMoneyAnnual(int moneyAnnual) {
 		this.moneyAnnual = moneyAnnual;
 	}
+	// Redéfinition de la méthode toString de la classe ProjectCreate
 	@Override
 	public String toString() {
 		return "ProjectCreate [name=" + name + ", description=" + description + ", dateBegin=" + dateBegin
