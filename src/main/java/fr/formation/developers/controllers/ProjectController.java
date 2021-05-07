@@ -24,8 +24,8 @@ public class ProjectController {
 	// date de début et budget annuel de la classe ProjectCreate
 	@PostMapping
 	public void createProject(@Valid @RequestBody ProjectCreate project) {
-		System.out.println("le projet de nom " + project.getName() + " est de description " + project.getDescription()
-				+ " de date de début " + project.getDateBegin() + " et de budget annuel de " + project.getMoneyAnnual()
+		System.out.println("The project of name " + project.getName() + " has a description " + project.getDescription()
+				+ " with date of beginning " + project.getDateBegin() + " and annual money " + project.getMoneyAnnual()
 				+ " euros");
 
 	}
@@ -34,13 +34,13 @@ public class ProjectController {
 	// les champs Description et Budget annuel de la classe ProjectUpdate
 	@PatchMapping("{name}/description/moneyannual")
 	public void updateProject(@PathVariable("name") String name, @Valid @RequestBody ProjectUpdate project) {
-		System.out.println("le projet de nom " + name + " est de description " + project.getDescription()
-				+ " et de budget annuel " + project.getMoneyAnnual() + " euros ");
+		System.out.println("the project of name " + name + " has a description " + project.getDescription()
+				+ " and annual money " + project.getMoneyAnnual() + " euros ");
 	}
 
 	// Clôturer un projet par son nom
 	@DeleteMapping("{name}/date-end")
 	public void closeProject(@PathVariable("name") String name, @Valid @RequestBody ProjectClose projectClose) {
-		System.out.println(" le projet de nom " + name + " est clôturé à la date " + projectClose.getDateEnd() + " . ");
+		System.out.println(" the project of name " + name + " is closed at " + projectClose.getDateEnd() + " . ");
 	}
 }
