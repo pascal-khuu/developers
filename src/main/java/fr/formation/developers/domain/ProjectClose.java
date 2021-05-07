@@ -2,11 +2,14 @@ package fr.formation.developers.domain;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 
 public class ProjectClose {
 	// Champ de la classe ProjectClose
 	@NotNull
+	@Future
 	private LocalDate dateEnd;
 	
 	// COnstructeur de la classe ProjectClose

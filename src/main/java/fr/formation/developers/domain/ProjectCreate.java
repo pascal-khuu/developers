@@ -2,7 +2,9 @@ package fr.formation.developers.domain;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,11 +12,14 @@ public class ProjectCreate {
 	// Champs de la classe ProjectCreate
 	@NotNull
 	@Size(min=1,max=255)
+	@NotBlank
 	private String name;
 	@NotNull
 	@Size(min=100,max=1000)
+	@NotBlank
 	private String description;
 	@NotNull
+	@FutureOrPresent
 	private LocalDate dateBegin;
 	@NotNull
 	@Min(value=1)

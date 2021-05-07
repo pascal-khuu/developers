@@ -2,19 +2,27 @@ package fr.formation.developers.domain;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
 public class Project {
 	@NotNull
+	@NotBlank
 	@Size(min=1,max=255)
 	private String name;
+	@NotBlank
 	@NotNull
 	@Size(min=100,max=1000)
 	private String description;
 	@NotNull
+	@FutureOrPresent
 	private LocalDate dateBegin;
+	@Future
 	@NotNull
 	private LocalDate dateEnd;
 	@NotNull

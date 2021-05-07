@@ -2,6 +2,7 @@ package fr.formation.developers.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,8 +39,8 @@ public class ProjectController {
 	}
 
 	// Clôturer un projet par son nom
-	@PatchMapping("{name}/date-end")
-	public void closeProject(@PathVariable("name") String name, @RequestBody ProjectClose projectClose) {
+	@DeleteMapping("{name}/date-end")
+	public void closeProject(@PathVariable("name") String name, @Valid @RequestBody ProjectClose projectClose) {
 		System.out.println(" le projet de nom " + name + " est clôturé à la date " + projectClose.getDateEnd() + " . ");
 	}
 }

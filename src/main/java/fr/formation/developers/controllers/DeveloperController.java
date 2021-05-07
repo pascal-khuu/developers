@@ -40,7 +40,7 @@ public class DeveloperController {
 	 @PatchMapping("developer/{pseudo}/birth-date")
 	    public void updateBirthDate(@PathVariable("pseudo") String pseudo,
 		   @Valid @RequestBody DeveloperUpdate partial) {
-		//System.out.println("Partial object=" + partial);
+		System.out.println("Partial object=" + partial);
 		//DeveloperCreate developer = new DeveloperCreate();
 		//developer.setPseudo(pseudo); // Variable de chemin
 		//developer.setFirstname(partial.getFirstname()); // Anomalie
