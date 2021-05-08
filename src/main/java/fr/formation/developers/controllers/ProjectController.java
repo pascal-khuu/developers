@@ -22,7 +22,7 @@ public class ProjectController {
 
 	//Create a project with rules on fields "name", "description", "dateBegin", "moneyAnnual" 
 	// of the object "projectCreate" with type "ProjectCreate" 
-	//(obligatory, length of character,at least one character, date at the present or at the future and optionnal)
+	//(obligatory, length of character,at least one character, date at the present or at the future and optionnal (if not optionnal >0)
 	@PostMapping
 	public void createProject(@Valid @RequestBody ProjectCreate projectCreate) {
 		System.out.println("The project of name " + projectCreate.getName() + " has a description " + projectCreate.getDescription()
