@@ -3,16 +3,19 @@ package fr.formation.developers.domain;
 import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
-// représente une input qui est date de naissancze
+// Represent an input with a date of birthdate
 public class DeveloperUpdate {
-
+	
+	// Field "birthDate" (Obligatory)
 	@NotNull
 	private LocalDate birthDate;
 	
+	// Constructor
 	public DeveloperUpdate() {
 		
 	}
-
+	
+	// Getters and Setters
 	public LocalDate getBirthDate() {
 		return birthDate;
 	}
@@ -21,6 +24,7 @@ public class DeveloperUpdate {
 		this.birthDate = birthDate;
 	}
 
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "DeveloperUpdate [birthDate=" + birthDate + "]";

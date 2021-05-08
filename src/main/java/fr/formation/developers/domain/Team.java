@@ -6,11 +6,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Team {
-	// Name (obligatory, between one character and 255 characters)
+	// Field "name" (obligatory, between one character and 255 characters)
 	@NotNull 
 	@Size(min=1,max=255)
 	private String name;
-	// Agility (obligatory)
+	// Field "agility" (obligatory)
 	@NotNull
 	private boolean agility;
 	// Constructor

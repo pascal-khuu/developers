@@ -9,32 +9,32 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class ProjectCreate {
-	// Class "ProjectCreate" with fields "name", "description", "dateBegin" and "moneyAnnual"
-	// field "name" (obligatory, at least one character, between one character and 255 characters)
+	// Class "ProjectCreate" with 4 fields "name", "description", "dateBegin" and "moneyAnnual"
+	// Field "name" (obligatory, between one character and 255 characters,  at least one character)
 	@NotNull
 	@Size(min=1,max=255)
 	@NotBlank
 	private String name;
-	// field "description" (obligatory, at least one character, between 100 character and 1000 characters)
+	// Field "description" (obligatory, between 100 character and 1000 characters, at least one character)
 	@NotNull
 	@Size(min=100,max=1000)
 	@NotBlank
 	private String description;
-	// field "dateBegin" (obligatory, date of the present or at future)
+	// Field "dateBegin" (obligatory, date of the present or at future)
 	@NotNull
 	@FutureOrPresent
 	private LocalDate dateBegin;
-	// field "moneyAnnual" (obligatory, value at least one)
+	// Field "moneyAnnual" (obligatory, value at least one)
 	@NotNull
 	@Min(value=1)
 	private int moneyAnnual;
 	
-	// Constructeur de la classe ProjectCreate
+	// Constructor
 	public ProjectCreate() {
 		
 	}
 	
-	// Getters et Setters de la classe ProjectCreate
+	// Getters and Setters 
 	public String getName() {
 		return name;
 	}
@@ -59,7 +59,7 @@ public class ProjectCreate {
 	public void setMoneyAnnual(int moneyAnnual) {
 		this.moneyAnnual = moneyAnnual;
 	}
-	// Redéfinition de la méthode toString de la classe ProjectCreate
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "ProjectCreate [name=" + name + ", description=" + description + ", dateBegin=" + dateBegin

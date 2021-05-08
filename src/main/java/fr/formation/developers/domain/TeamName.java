@@ -1,13 +1,15 @@
 package fr.formation.developers.domain;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class TeamName {
 	// Class TeamName with one field "name"
-	// Name (obligatory, between one character and 255 characters)
+	// Field "name" (obligatory, between one character and 255 characters)
 	@NotNull
 	@Size(min=1,max=255)
+	@NotBlank
 	private String name;
 	// Constructor
 	public TeamName() {

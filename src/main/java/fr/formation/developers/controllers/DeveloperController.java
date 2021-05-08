@@ -24,7 +24,7 @@ public class DeveloperController {
 		System.out.println(developer);
 	}
 	
-	// Access to all attributes of developer with alias
+	// Access to all attributes of developer with pseudo
 	@GetMapping("developer/{pseudo}")
 	public DeveloperCreate getByPseudo(@PathVariable("pseudo") String pseudo) {
 		DeveloperCreate developer = new DeveloperCreate();

@@ -9,19 +9,21 @@ import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 public class ProjectUpdate {
-	// Champs de la classe ProjectUpdate
+	// Class "ProjectUpdate with two field "description" and "moneyAnnual"
+	// Field "description" (obligatory,  between one character and 255 characters, at least one character)
 	@NotNull
 	@Size(min=100,max=1000)
 	@NotBlank
 	private String description;
+	// Field "moneyAnnual" (positive (not optionnal) or 0 (optionnal))
 	@PositiveOrZero
 	private int moneyAnnual;
 	
-	// Constructeur de la classe ProjectUpdate
+	// Constructor
 	public ProjectUpdate() {
 		
 	}
-	// Getters et setters de la classe ProjectUpdate
+	// Getters and setters 
 	public String getDescription() {
 		return description;
 	}
@@ -34,7 +36,7 @@ public class ProjectUpdate {
 	public void setMoneyAnnual(int moneyAnnual) {
 		this.moneyAnnual = moneyAnnual;
 	}
-	// Redéfinition de la méthode ToString de la classe ProjectUpdate
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "ProjectUpdate [description=" + description + ", moneyAnnual=" + moneyAnnual + "]";

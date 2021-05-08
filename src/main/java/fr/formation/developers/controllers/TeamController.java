@@ -22,12 +22,12 @@ public class TeamController {
 
 
 	@PostMapping
-	//create a team with all its attribute with rules (length of characters and obligatory)
+	//Create a team with all its attribute with rules (length of characters and obligatory)
 	public void create (@Valid @RequestBody Team team) {
 		System.out.println(team);
 		
 	}
-	//Collect the name of a team by its name
+	//Collect the information of a team by its name
 	@GetMapping("{name}")	
 	public Team get(@PathVariable("name")String ui) {
 		Team team = new Team();
@@ -41,7 +41,7 @@ public class TeamController {
 	// Delete a team by its name
 	@DeleteMapping
 	public void deleteName(@Valid @RequestBody TeamName name) {
-		// display field "name" of the TeamName "name"
+		// display field "name" of the TeamName "name" which is deleted
 		System.out.println("the team with name "+ name.getName() + " is deleted. ");
 		
 	}

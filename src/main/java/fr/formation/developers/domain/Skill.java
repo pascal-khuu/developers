@@ -4,14 +4,16 @@ import javax.validation.constraints.NotNull;
 
 public class Skill {
 	
-	//Obligatory
+	// Field "name" (obligatory)
 	@NotNull
 	private String name;
 	
+	// Constructor
 	public Skill() {
 		
 	}
 	
+	// Getters and Setters
 	public String getName() {
 		return name;
 	}
@@ -20,6 +22,7 @@ public class Skill {
 		this.name = name;
 	}
 
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "Skill [name=" + name + "]";

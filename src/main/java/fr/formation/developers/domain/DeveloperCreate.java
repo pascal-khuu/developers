@@ -6,26 +6,26 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 
 public class DeveloperCreate {
-	// fields 
-	// obligatory
+	
+	// Field "pseudo" (obligatory)
 	@NotNull
 	String pseudo;
-	// obligatory
+	// Field "name" (obligatory)
 	@NotNull
 	String name;
-	// obligatory
+	// Field "firstname" (obligatory)
 	@NotNull
 	String firstname;
-	// obligatory
+	// Field "birthdate" (obligatory)
 	@NotNull
 	LocalDate birthdate;
 	
 	
-	// constructor
+	// Constructor
 	public DeveloperCreate() {
 	}
 
-	// getters and Setters
+	// Getters and Setters
 
 	public String getPseudo() {
 		return pseudo;
@@ -66,6 +66,7 @@ public class DeveloperCreate {
 		this.birthdate = birthdate;
 	}
 
+	// Redefinition of toString()
 	@Override
 	public String toString() {
 		return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthdate
@@ -75,7 +76,7 @@ public class DeveloperCreate {
 	
 	
 
-	// method toString()
+	
 	
 	
 	

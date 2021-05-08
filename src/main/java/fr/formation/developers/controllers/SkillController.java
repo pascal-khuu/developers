@@ -14,7 +14,7 @@ import fr.formation.developers.domain.Skill;
 @RestController
 public class SkillController {
 	
-		// access the name of a skill by its id
+		// Access the name of a skill by its id
 		@GetMapping("/skills/{id}")
 		public Skill getById(@PathVariable("id") Long id) {
 			Skill skill =new Skill();

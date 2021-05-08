@@ -7,17 +7,18 @@ import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 
 public class ProjectClose {
-	// Champ de la classe ProjectClose
+	// Class "ProjectClose" with one field "dateEnd"
+	// Field "dateEnd" (Obligatory, date at future)
 	@NotNull
 	@Future
 	private LocalDate dateEnd;
 	
-	// COnstructeur de la classe ProjectClose
+	// Constructor
 	public ProjectClose() {
 		
 	}
 
-	// Getters et Setters de la classe ProjectClose
+	// Getters and setters
 	public LocalDate getDateEnd() {
 		return dateEnd;
 	}
@@ -26,7 +27,7 @@ public class ProjectClose {
 		this.dateEnd = dateEnd;
 	}
 
-	// redéfinition de la méthode toString de la classe ProjectClose
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "ProjectClose [dateEnd=" + dateEnd + "]";

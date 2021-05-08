@@ -8,30 +8,31 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 public class Project {
-	// field "name" (obligatory, at least one character, between one character and 255 characters)
+	// Field "name" (obligatory, at least one character, between one character and 255 characters)
 	@NotNull
 	@NotBlank
 	@Size(min=1,max=255)
 	private String name;
-	// field "description" (obligatory, at least one character, between 100 character and 1000 characters)
-	@NotBlank
+	// Field "description" (obligatory, at least one character, between 100 character and 1000 characters)
 	@NotNull
+	@NotBlank
 	@Size(min=100,max=1000)
 	private String description;
-	// field "dateBegin" (obligatory, date of the present or at future)
+	// Field "dateBegin" (obligatory, date of the present or at future)
 	@NotNull
 	@FutureOrPresent
 	private LocalDate dateBegin;
-	// field "dateEnd" (obligatory, date  at future)
+	// Field "dateEnd" (obligatory, date  at future)
 	@Future
 	@NotNull
 	private LocalDate dateEnd;
-	// field "moneyAnnual" (obligatory, value at least one)
+	// Field "moneyAnnual" (obligatory, optionnal(=0) , if not optionnal (>0))
 	@NotNull
-	@Min(value=1)
+	@PositiveOrZero
 	private int moneyAnnual;
 	
 	//Constructor
