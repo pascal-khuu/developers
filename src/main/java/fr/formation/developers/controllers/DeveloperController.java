@@ -32,7 +32,7 @@ public class DeveloperController {
 		developer.setName("KHUU");
 		developer.setFirstname("Pomme");
 		LocalDate date1 = LocalDate.of(1980,07,05); 
-		developer.setBirthdate(date1);
+		developer.setBirthDate(date1);
 		return developer;
 	}
 	

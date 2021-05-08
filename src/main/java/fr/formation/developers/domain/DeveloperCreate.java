@@ -18,7 +18,7 @@ public class DeveloperCreate {
 	String firstname;
 	// Field "birthdate" (obligatory)
 	@NotNull
-	LocalDate birthdate;
+	LocalDate birthDate;
 	
 	
 	// Constructor
@@ -57,19 +57,19 @@ public class DeveloperCreate {
 	}
 
 
-	public LocalDate getBirthdate() {
-		return birthdate;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
 
-	public void setBirthdate(LocalDate birthdate) {
-		this.birthdate = birthdate;
+	public void setBirthDate(LocalDate birthdate) {
+		this.birthDate = birthdate;
 	}
 
 	// Redefinition of toString()
 	@Override
 	public String toString() {
-		return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthdate
+		return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthDate
 				+ "]";
 	}
 	
