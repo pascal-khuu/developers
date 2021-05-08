@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 public class TeamName {
 	// Class TeamName with one field "name"
-	// Field "name" (obligatory, between one character and 255 characters)
+	// Field "name" (obligatory, between one character and 255 characters, at least one character)
 	@NotNull
 	@Size(min=1,max=255)
 	@NotBlank
