@@ -25,7 +25,7 @@ public class ProjectCreate {
 	@NotNull
 	@FutureOrPresent
 	private LocalDate dateBegin;
-	// Field "moneyAnnual" (obligatory, value at least one)
+	// Field "moneyAnnual" (obligatory, Positive (>0) or Zero (optionnal))
 	@NotNull
 	@PositiveOrZero
 	private int moneyAnnual;
