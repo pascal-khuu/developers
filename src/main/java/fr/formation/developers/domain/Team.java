@@ -6,14 +6,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Team {
+	// Name (obligatory, between one character and 255 characters)
 	@NotNull 
 	@Size(min=1,max=255)
 	private String name;
+	// Agility (obligatory)
 	@NotNull
 	private boolean agility;
+	// Constructor
 	public Team(){
 		
 	}
+	// Getters and Setters
 	public String getName() {
 		return name;
 	}
@@ -26,6 +30,7 @@ public class Team {
 	public void setAgility(boolean agile) {
 		this.agility = agile;
 	}
+	// Redefinition of toString
 	@Override
 	public String toString() {
 		return "Equipe [nom=" + name + ", agile=" + agility + "]";

@@ -7,12 +7,16 @@ import javax.validation.constraints.NotNull;
 
 public class DeveloperCreate {
 	// fields 
+	// obligatory
 	@NotNull
 	String pseudo;
+	// obligatory
 	@NotNull
 	String name;
+	// obligatory
 	@NotNull
 	String firstname;
+	// obligatory
 	@NotNull
 	LocalDate birthdate;
 	
@@ -21,7 +25,7 @@ public class DeveloperCreate {
 	public DeveloperCreate() {
 	}
 
-	// getters && Setters
+	// getters and Setters
 
 	public String getPseudo() {
 		return pseudo;

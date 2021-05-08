@@ -18,7 +18,7 @@ import fr.formation.developers.domain.DeveloperUpdate;
 @RestController
 public class DeveloperController {
 	
-	// Access to all attributes of developer
+	// Create with all attributes of developer
 	@PostMapping ("/developer")
 	public void create(@RequestBody DeveloperCreate developer) {
 		System.out.println(developer);
@@ -30,13 +30,13 @@ public class DeveloperController {
 		DeveloperCreate developer = new DeveloperCreate();
 		developer.setPseudo(pseudo);
 		developer.setName("KHUU");
-		developer.setFirstname("Christine");
+		developer.setFirstname("Pomme");
 		LocalDate date1 = LocalDate.of(1980,07,05); 
 		developer.setBirthdate(date1);
 		return developer;
 	}
 	
-	
+	// Modify birthdate of a developer by its pseudo
 	 @PatchMapping("developer/{pseudo}/birth-date")
 	    public void updateBirthDate(@PathVariable("pseudo") String pseudo,
 		   @Valid @RequestBody DeveloperUpdate partial) {

@@ -14,6 +14,7 @@ import fr.formation.developers.domain.Skill;
 @RestController
 public class SkillController {
 	
+		// access the name of a skill by its id
 		@GetMapping("/skills/{id}")
 		public Skill getById(@PathVariable("id") Long id) {
 			Skill skill =new Skill();
@@ -21,6 +22,7 @@ public class SkillController {
 			return skill;
 		}
 		
+		// Create a skill with its field "name"
 		@PostMapping ("/skills")
 		public void create(@Valid @RequestBody  Skill skill) {
 			System.out.println(skill);

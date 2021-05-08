@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 
 public class Skill {
 	
+	//Obligatory
 	@NotNull
 	private String name;
 	

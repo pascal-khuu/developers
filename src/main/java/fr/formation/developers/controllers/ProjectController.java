@@ -20,25 +20,28 @@ import fr.formation.developers.domain.ProjectUpdate;
 @RequestMapping("/project")
 public class ProjectController {
 
-	// Créer un projet avec la gestion des règles sur le champ nom, description,
-	// date de début et budget annuel de la classe ProjectCreate
+	//Create a project with rules on fields "name", "description", "dateBegin", "moneyAnnual" 
+	// of the object "projectCreate" with type "ProjectCreate" 
+	//(obligatory, length of character,at least one character, date at the present or at the future and optionnal)
 	@PostMapping
-	public void createProject(@Valid @RequestBody ProjectCreate project) {
-		System.out.println("The project of name " + project.getName() + " has a description " + project.getDescription()
-				+ " with date of beginning " + project.getDateBegin() + " and annual money " + project.getMoneyAnnual()
+	public void createProject(@Valid @RequestBody ProjectCreate projectCreate) {
+		System.out.println("The project of name " + projectCreate.getName() + " has a description " + projectCreate.getDescription()
+				+ " with the date of beginning " + projectCreate.getDateBegin() + " and with annual money of " + projectCreate.getMoneyAnnual()
 				+ " euros");
 
 	}
 
-	// Modifier les propriétés d'un projet par son nom ave la gestion des règles sur
-	// les champs Description et Budget annuel de la classe ProjectUpdate
+	// Modify the fields of the project by the name with rules on fields "description" and "moneyAnnual" of  the object 
+	// "projectUpdate " with type "ProjectUpdate"  
+	// (obligatory, length of character,at least one character,  optionnal, if not optionnal moneyAnnual >0)
 	@PatchMapping("{name}/description/moneyannual")
-	public void updateProject(@PathVariable("name") String name, @Valid @RequestBody ProjectUpdate project) {
-		System.out.println("the project of name " + name + " has a description " + project.getDescription()
-				+ " and annual money " + project.getMoneyAnnual() + " euros ");
+	public void updateProject(@PathVariable("name") String name, @Valid @RequestBody ProjectUpdate projectUpdate) {
+		System.out.println("the project of name " + name + " has a description " + projectUpdate.getDescription()
+				+ " and the annual money is " + projectUpdate.getMoneyAnnual() + " euros ");
 	}
 
-	// Clôturer un projet par son nom
+	// Close a project by its name with rules on the field "dateEnd" of the object "projectClose" with type "ProjectClose"
+	// (obligatory, date at the future)
 	@DeleteMapping("{name}/date-end")
 	public void closeProject(@PathVariable("name") String name, @Valid @RequestBody ProjectClose projectClose) {
 		System.out.println(" the project of name " + name + " is closed at " + projectClose.getDateEnd() + " . ");
