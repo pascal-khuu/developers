@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import fr.formation.developers.validation.DateNaissance;
+
 public class DeveloperCreate {
 	
 	// Field "pseudo" (obligatory)
@@ -17,7 +19,7 @@ public class DeveloperCreate {
 	@NotNull
 	String firstname;
 	// Field "birthdate" (obligatory)
-	@NotNull
+	@DateNaissance
 	LocalDate birthDate;
 	
 	

@@ -20,7 +20,7 @@ public class DeveloperController {
 	
 	// Create with all attributes of developer
 	@PostMapping ("/developer")
-	public void create(@RequestBody DeveloperCreate developer) {
+	public void create( @Valid @RequestBody DeveloperCreate developer) {
 		System.out.println(developer);
 	}
 	

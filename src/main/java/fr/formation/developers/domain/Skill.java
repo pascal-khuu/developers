@@ -2,10 +2,12 @@ package fr.formation.developers.domain;
 
 import javax.validation.constraints.NotNull;
 
+import fr.formation.developers.validation.Uppercase;
+
 public class Skill {
 	
 	// Field "name" (obligatory)
-	@NotNull
+	//@Uppercase
 	private String name;
 	
 	// Constructor
