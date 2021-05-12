@@ -20,6 +20,7 @@ public class DeveloperCreate {
 	String firstname;
 	// Field "birthdate" (obligatory)
 	@DateNaissance
+	// personnal annotation >=18 years
 	LocalDate birthDate;
 	
 	
