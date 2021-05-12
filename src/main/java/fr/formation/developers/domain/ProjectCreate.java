@@ -9,6 +9,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
+import fr.formation.developers.validation.IdentiqueNameAndDescription;
+
+@IdentiqueNameAndDescription
 public class ProjectCreate {
 	// Class "ProjectCreate" with 4 fields "name", "description", "dateBegin" and "moneyAnnual"
 	// Field "name" (obligatory, between one character and 255 characters,  at least one character)
