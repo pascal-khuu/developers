@@ -14,7 +14,7 @@ import javax.validation.Payload;
 @Target(ElementType.TYPE)
 @Constraint(validatedBy = {IdentiqueNameAndDescriptionValidation.class })
 public @interface IdentiqueNameAndDescription {
-	String message() default "La description et le nom ne doivent pas être identiques";
+	String message() default "The name and the description must not be the same expression";
 
 	Class<?>[] groups() default { };
 
