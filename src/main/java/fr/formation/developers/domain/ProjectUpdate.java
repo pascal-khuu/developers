@@ -6,14 +6,14 @@ import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 public class ProjectUpdate {
-    // Class "ProjectUpdate with two field "description" and "moneyAnnual"
+    // Class "ProjectUpdate with two fields "description" and "moneyAnnual"
     // Field "description" (Mandatory, between one character and 255 characters, at
     // least one character)
     @NotNull
     @Size(min = 100, max = 1000)
     @NotBlank
     private String description;
-    // Field "moneyAnnual" (positive (not optionnal) or 0 (optionnal))
+    // Field "moneyAnnual" (positive (not optional) or 0 (optional))
     @PositiveOrZero
     private int moneyAnnual;
 

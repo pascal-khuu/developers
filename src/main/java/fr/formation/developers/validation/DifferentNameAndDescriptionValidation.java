@@ -5,9 +5,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import fr.formation.developers.domain.ProjectCreate;
 
-// validate if two expressions are not equal
-public class IdentiqueNameAndDescriptionValidation
-	implements ConstraintValidator<IdentiqueNameAndDescription, ProjectCreate> {
+// validate if two expressions are not identical.
+public class DifferentNameAndDescriptionValidation
+	implements ConstraintValidator<DifferentNameAndDescription, ProjectCreate> {
 
     @Override
     public boolean isValid(ProjectCreate value, ConstraintValidatorContext context) {

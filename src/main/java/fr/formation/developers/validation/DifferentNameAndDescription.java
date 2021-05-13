@@ -9,12 +9,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-// personnal annotation to check if two words are not equal.
+// personal annotation to check if two words are not identical.
 @Retention(RUNTIME)
 @Target(ElementType.TYPE)
-@Constraint(validatedBy = { IdentiqueNameAndDescriptionValidation.class })
-public @interface IdentiqueNameAndDescription {
-    String message() default "The name and the description must not be the same expression";
+@Constraint(validatedBy = { DifferentNameAndDescriptionValidation.class })
+public @interface DifferentNameAndDescription {
+    String message() default "The name and the description must  be different";
 
     Class<?>[] groups() default {};
 

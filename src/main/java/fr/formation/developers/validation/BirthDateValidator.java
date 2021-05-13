@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-// Validate if the years between the input  birthDate and today is more or equal of 18 years
+// Validate if the number of years between the input  birthDate and today is bigger than or equals to 18 years
 public class BirthDateValidator implements ConstraintValidator<BirthDate, LocalDate> {
 
     @Override

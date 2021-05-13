@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 
-// Represent an input with a date of birthdate
+// It means an input with a date of the field "birthdate"
 public class DeveloperUpdate {
 
-    // Field "birthDate" (Obligatory)
+    // Field "birthDate" (mandatory)
     @NotNull
     private LocalDate birthDate;
 

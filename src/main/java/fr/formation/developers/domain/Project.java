@@ -22,15 +22,15 @@ public class Project {
     @NotBlank
     @Size(min = 100, max = 1000)
     private String description;
-    // Field "dateBegin" (mandatory, date of the present or at future)
+    // Field "dateBegin" (mandatory, the current date or in the future)
     @NotNull
     @FutureOrPresent
     private LocalDate dateBegin;
-    // Field "dateEnd" (mandatory, date at future)
+    // Field "dateEnd" (mandatory, date in the future)
     @Future
     @NotNull
     private LocalDate dateEnd;
-    // Field "moneyAnnual" (mandatory, optionnal(=0) , if not optionnal (>0))
+    // Field "moneyAnnual" (mandatory, optional(=0) , if not optional (>0))
     @NotNull
     @PositiveOrZero
     private int moneyAnnual;

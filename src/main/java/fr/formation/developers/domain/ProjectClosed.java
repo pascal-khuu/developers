@@ -5,15 +5,15 @@ import java.time.LocalDate;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
-public class ProjectClose {
-    // Class "ProjectClose" with one field "dateEnd"
-    // Field "dateEnd" (Mandatory, date at future)
+public class ProjectClosed {
+    // Class "ProjectClosed" with one field "dateEnd"
+    // Field "dateEnd" (Mandatory, date in the future)
     @NotNull
     @Future
     private LocalDate dateEnd;
 
     // Constructor
-    public ProjectClose() {
+    public ProjectClosed() {
 
     }
 

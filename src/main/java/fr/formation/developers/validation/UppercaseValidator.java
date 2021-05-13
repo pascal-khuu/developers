@@ -4,9 +4,9 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class UppercaseValidator implements ConstraintValidator<Uppercase, String> {
-// Value must be all uppercased
+// Value must be in uppercase
 // compare Value to uppercased value
-// Validate if the value is uppercased
+// Validate if the value is in uppercase
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
 	if (value == null) {

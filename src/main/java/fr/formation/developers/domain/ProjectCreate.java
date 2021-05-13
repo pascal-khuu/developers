@@ -8,9 +8,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
-import fr.formation.developers.validation.IdentiqueNameAndDescription;
+import fr.formation.developers.validation.DifferentNameAndDescription;
 
-@IdentiqueNameAndDescription
+@DifferentNameAndDescription
 public class ProjectCreate {
     // Class "ProjectCreate" with 4 fields "name", "description", "dateBegin" and
     // "moneyAnnual"
@@ -26,11 +26,11 @@ public class ProjectCreate {
     @Size(min = 100, max = 1000)
     @NotBlank
     private String description;
-    // Field "dateBegin" (mandatory, date of the present or at future)
+    // Field "dateBegin" (mandatory, the current date or in the future)
     @NotNull
     @FutureOrPresent
     private LocalDate dateBegin;
-    // Field "moneyAnnual" (mandatory, Positive (>0) or Zero (optionnal))
+    // Field "moneyAnnual" (mandatory, Positive (>0) or Zero (optional))
     @NotNull
     @PositiveOrZero
     private int moneyAnnual;

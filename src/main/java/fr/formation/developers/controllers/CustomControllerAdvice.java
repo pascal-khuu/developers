@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-// Exceptions or error in console of postman
-@RestControllerAdvice
+// Exceptions or errors in the console of Postman
+/*@RestControllerAdvice
 public class CustomControllerAdvice extends ResponseEntityExceptionHandler {
 
     @Override
@@ -23,4 +23,4 @@ public class CustomControllerAdvice extends ResponseEntityExceptionHandler {
 	return handleExceptionInternal(ex, errors, headers, badRequest, request);
     }
 
-}
+}*/
