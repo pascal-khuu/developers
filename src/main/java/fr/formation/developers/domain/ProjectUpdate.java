@@ -1,16 +1,13 @@
 package fr.formation.developers.domain;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 public class ProjectUpdate {
     // Class "ProjectUpdate with two field "description" and "moneyAnnual"
-    // Field "description" (obligatory, between one character and 255 characters, at
+    // Field "description" (Mandatory, between one character and 255 characters, at
     // least one character)
     @NotNull
     @Size(min = 100, max = 1000)
