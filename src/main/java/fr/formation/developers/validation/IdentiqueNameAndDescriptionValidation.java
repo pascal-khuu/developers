@@ -5,17 +5,14 @@ import javax.validation.ConstraintValidatorContext;
 
 import fr.formation.developers.domain.ProjectCreate;
 
+// validate if two expressions are not equal
+public class IdentiqueNameAndDescriptionValidation
+	implements ConstraintValidator<IdentiqueNameAndDescription, ProjectCreate> {
 
+    @Override
+    public boolean isValid(ProjectCreate value, ConstraintValidatorContext context) {
 
-public class IdentiqueNameAndDescriptionValidation implements ConstraintValidator<IdentiqueNameAndDescription, ProjectCreate> {
-
-	@Override
-	public boolean isValid(ProjectCreate value, ConstraintValidatorContext context) {
-		// TODO Auto-generated method stub
-		return !(value.getDescription().equals(value.getName()));
-	}
-
-
+	return !(value.getDescription().equals(value.getName()));
+    }
 
 }
-

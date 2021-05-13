@@ -9,38 +9,43 @@ import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 public class ProjectUpdate {
-	// Class "ProjectUpdate with two field "description" and "moneyAnnual"
-	// Field "description" (obligatory,  between one character and 255 characters, at least one character)
-	@NotNull
-	@Size(min=100,max=1000)
-	@NotBlank
-	private String description;
-	// Field "moneyAnnual" (positive (not optionnal) or 0 (optionnal))
-	@PositiveOrZero
-	private int moneyAnnual;
-	
-	// Constructor
-	public ProjectUpdate() {
-		
-	}
-	// Getters and setters 
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public int getMoneyAnnual() {
-		return moneyAnnual;
-	}
-	public void setMoneyAnnual(int moneyAnnual) {
-		this.moneyAnnual = moneyAnnual;
-	}
-	// Redefinition of toString
-	@Override
-	public String toString() {
-		return "ProjectUpdate [description=" + description + ", moneyAnnual=" + moneyAnnual + "]";
-	}
-	
-	
+    // Class "ProjectUpdate with two field "description" and "moneyAnnual"
+    // Field "description" (obligatory, between one character and 255 characters, at
+    // least one character)
+    @NotNull
+    @Size(min = 100, max = 1000)
+    @NotBlank
+    private String description;
+    // Field "moneyAnnual" (positive (not optionnal) or 0 (optionnal))
+    @PositiveOrZero
+    private int moneyAnnual;
+
+    // Constructor
+    public ProjectUpdate() {
+
+    }
+
+    // Getters and setters
+    public String getDescription() {
+	return description;
+    }
+
+    public void setDescription(String description) {
+	this.description = description;
+    }
+
+    public int getMoneyAnnual() {
+	return moneyAnnual;
+    }
+
+    public void setMoneyAnnual(int moneyAnnual) {
+	this.moneyAnnual = moneyAnnual;
+    }
+
+    // Redefinition of toString
+    @Override
+    public String toString() {
+	return "ProjectUpdate [description=" + description + ", moneyAnnual=" + moneyAnnual + "]";
+    }
+
 }

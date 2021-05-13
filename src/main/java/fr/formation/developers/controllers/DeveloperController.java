@@ -17,36 +17,35 @@ import fr.formation.developers.domain.DeveloperUpdate;
 
 @RestController
 public class DeveloperController {
-	
-	// Create with all attributes of developer
-	@PostMapping ("/developer")
-	public void create( @Valid @RequestBody DeveloperCreate developer) {
-		System.out.println(developer);
-	}
-	
-	// Access to all attributes of developer with pseudo
-	@GetMapping("developer/{pseudo}")
-	public DeveloperCreate getByPseudo(@PathVariable("pseudo") String pseudo) {
-		DeveloperCreate developer = new DeveloperCreate();
-		developer.setPseudo(pseudo);
-		developer.setName("KHUU");
-		developer.setFirstname("Pomme");
-		LocalDate date1 = LocalDate.of(1980,07,05); 
-		developer.setBirthDate(date1);
-		return developer;
-	}
-	
-	// Modify birthdate of a developer by its pseudo
-	 @PatchMapping("developer/{pseudo}/birth-date")
-	    public void updateBirthDate(@PathVariable("pseudo") String pseudo,
-		   @Valid @RequestBody DeveloperUpdate partial) {
-		System.out.println("Partial object=" + partial);
-		//DeveloperCreate developer = new DeveloperCreate();
-		//developer.setPseudo(pseudo); // Variable de chemin
-		//developer.setFirstname(partial.getFirstname()); // Anomalie
-		//developer.setName("MARSHALL");
-		//developer.setBirthdate(partial.getBirthdate()); // JSON
-		//System.out.println("New object=" + developer);
-		 System.out.println("Update birth date of " + pseudo+ " with new date "+partial.getBirthDate());
-	    }
+
+    // Create with all attributes of developer
+    @PostMapping("/developer")
+    public void create(@Valid @RequestBody DeveloperCreate developer) {
+	System.out.println(developer);
+    }
+
+    // Access to all attributes of developer with pseudo
+    @GetMapping("developer/{pseudo}")
+    public DeveloperCreate getByPseudo(@PathVariable("pseudo") String pseudo) {
+	DeveloperCreate developer = new DeveloperCreate();
+	developer.setPseudo(pseudo);
+	developer.setName("KHUU");
+	developer.setFirstname("Pomme");
+	LocalDate date1 = LocalDate.of(1980, 07, 05);
+	developer.setBirthDate(date1);
+	return developer;
+    }
+
+    // Modify birthdate of a developer by its pseudo
+    @PatchMapping("developer/{pseudo}/birth-date")
+    public void updateBirthDate(@PathVariable("pseudo") String pseudo, @Valid @RequestBody DeveloperUpdate partial) {
+	System.out.println("Partial object=" + partial);
+	// DeveloperCreate developer = new DeveloperCreate();
+	// developer.setPseudo(pseudo); // Variable de chemin
+	// developer.setFirstname(partial.getFirstname()); // Anomalie
+	// developer.setName("MARSHALL");
+	// developer.setBirthdate(partial.getBirthdate()); // JSON
+	// System.out.println("New object=" + developer);
+	System.out.println("Update birth date of " + pseudo + " with new date " + partial.getBirthDate());
+    }
 }

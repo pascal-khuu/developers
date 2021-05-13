@@ -1,22 +1,23 @@
 package fr.formation.developers.validation;
 
+import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-// personnal annotation to check if two words are not equal.
+// personnal annotation for checking if the years between two dates (the birthdate andt today) is more or equal 18 years
 @Retention(RUNTIME)
-@Target(ElementType.TYPE)
-@Constraint(validatedBy = { IdentiqueNameAndDescriptionValidation.class })
-public @interface IdentiqueNameAndDescription {
-    String message() default "The name and the description must not be the same expression";
+@Target(FIELD)
+@Constraint(validatedBy = { BirthDateValidator.class })
+public @interface BirthDate {
+    String message() default "the birthdate is not correct";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
 }

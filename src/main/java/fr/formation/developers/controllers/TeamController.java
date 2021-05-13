@@ -1,8 +1,5 @@
 package fr.formation.developers.controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,33 +17,32 @@ import fr.formation.developers.domain.TeamName;
 @RequestMapping("/team")
 public class TeamController {
 
+    @PostMapping
+    // Create a team with all its attribute with rules (length of characters and
+    // obligatory)
+    public void create(@Valid @RequestBody Team team) {
+	System.out.println(team);
 
-	@PostMapping
-	//Create a team with all its attribute with rules (length of characters and obligatory)
-	public void create (@Valid @RequestBody Team team) {
-		System.out.println(team);
-		
-	}
-	//Collect the information of a team by its name
-	@GetMapping("{name}")	
-	public Team get(@PathVariable("name")String ui) {
-		Team team = new Team();
-		team.setName(ui);
-		team.setAgility(true);
+    }
 
-		return team;
-		
-	}
-	// Class TeamName with one field "name"
-	// Delete a team by its name
-	@DeleteMapping
-	public void deleteName(@Valid @RequestBody TeamName name) {
-		// display field "name" of the TeamName "name" which is deleted
-		System.out.println("the team with name "+ name.getName() + " is deleted. ");
-		
-	}
+    // Collect the information of a team by its name
+    @GetMapping("{name}")
+    public Team get(@PathVariable("name") String name) {
+	Team team = new Team();
+	team.setName(name);
+	team.setAgility(true);
 
+	return team;
 
+    }
 
-	
+    // Class TeamName with one field "name"
+    // Delete a team by its name
+    @DeleteMapping
+    public void deleteName(@Valid @RequestBody TeamName name) {
+	// display field "name" of the TeamName "name" which is deleted
+	System.out.println("the team with name " + name.getName() + " is deleted. ");
+
+    }
+
 }
