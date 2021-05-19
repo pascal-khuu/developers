@@ -1,15 +1,15 @@
-package fr.formation.developers.domain;
+package fr.formation.developers.domain.dtos;
 
 import fr.formation.developers.validation.Uppercase;
 
-public class Skill {
+public class SkillCreate {
 
     // Field "name"
     @Uppercase
     private String name;
 
     // Constructor
-    public Skill() {
+    public SkillCreate() {
 
     }
 

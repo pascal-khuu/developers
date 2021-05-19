@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.formation.developers.domain.Team;
-import fr.formation.developers.domain.TeamName;
+import fr.formation.developers.domain.dtos.Team;
+import fr.formation.developers.domain.dtos.TeamName;
 
 @RestController
 @RequestMapping("/team")

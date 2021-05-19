@@ -3,7 +3,7 @@ package fr.formation.developers.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import fr.formation.developers.domain.ProjectCreate;
+import fr.formation.developers.domain.dtos.ProjectCreate;
 
 // validate if two expressions are not identical.
 public class DifferentNameAndDescriptionValidation

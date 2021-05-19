@@ -10,13 +10,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.formation.developers.domain.ProjectClosed;
-import fr.formation.developers.domain.ProjectCreate;
-import fr.formation.developers.domain.ProjectUpdate;
+import fr.formation.developers.domain.dtos.ProjectClosed;
+import fr.formation.developers.domain.dtos.ProjectCreate;
+import fr.formation.developers.domain.dtos.ProjectUpdate;
+import fr.formation.developers.services.ProjectService;
 
 @RestController
 @RequestMapping("/project")
 public class ProjectController {
+
+    private final ProjectService service;
+
+    public ProjectController(ProjectService service) {
+	this.service = service;
+    }
 
     /*
      * Create a project with rules on fields "name", "description", "dateBegin",
@@ -26,9 +33,7 @@ public class ProjectController {
      */
     @PostMapping
     public void createProject(@Valid @RequestBody ProjectCreate projectCreate) {
-	System.out.println("The project with the name " + projectCreate.getName() + " has a description "
-		+ projectCreate.getDescription() + " with the start date of " + projectCreate.getDateBegin()
-		+ " and with an annual budget of " + projectCreate.getMoneyAnnual() + " euros");
+	service.createProject(projectCreate);
 
     }
 
@@ -38,18 +43,22 @@ public class ProjectController {
      * "ProjectUpdate" (mandatory, length of a string,at least one character,
      * optional, if not optional moneyAnnual >0)
      */
+
     @PatchMapping("{name}/description/moneyannual")
     public void updateProject(@PathVariable("name") String name, @Valid @RequestBody ProjectUpdate projectUpdate) {
-	System.out.println("the project of name " + name + " has a description " + projectUpdate.getDescription()
-		+ " and the annual money is " + projectUpdate.getMoneyAnnual() + " euros ");
+	service.updateProject(name, projectUpdate);
+
     }
 
     /*
      * Close a project by its name with rules on the field "dateEnd" of the object
      * "projectClose" with type "ProjectClose" (mandatory, date in the future)
      */
+
     @DeleteMapping("{name}/date-end")
     public void closeProject(@PathVariable("name") String name, @Valid @RequestBody ProjectClosed projectClose) {
-	System.out.println(" the project of name " + name + " is closed at " + projectClose.getDateEnd() + " . ");
+	service.closeProject(name, projectClose);
+
     }
+
 }

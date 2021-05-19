@@ -1,4 +1,4 @@
-package fr.formation.developers.domain;
+package fr.formation.developers.domain.dtos;
 
 import java.time.LocalDate;
 
@@ -63,8 +63,8 @@ public class DeveloperCreate {
     // Redefinition of toString()
     @Override
     public String toString() {
-	return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthDate
-		+ "]";
+	return "Developer [pseudo=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate="
+		+ birthDate + "]";
     }
 
 }
