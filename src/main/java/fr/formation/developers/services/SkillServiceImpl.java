@@ -4,9 +4,16 @@ import org.springframework.stereotype.Service;
 
 import fr.formation.developers.domain.dtos.SkillCreate;
 import fr.formation.developers.domain.dtos.SkillView;
+import fr.formation.developers.domain.entities.Skill;
+import fr.formation.developers.repositories.SkillRepository;
 
 @Service
 public class SkillServiceImpl implements SkillService {
+    private final SkillRepository repository;
+
+    public SkillServiceImpl(SkillRepository repository) {
+	this.repository = repository;
+    }
 
     @Override
     public SkillView getById(long id) {
@@ -17,9 +24,10 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public void create(SkillCreate skill) {
-	System.out.println(" call in service");
-	System.out.println(skill);
+    public void create(SkillCreate dto) {
+	Skill skill = new Skill();
+	skill.setName(dto.getName());
+	repository.save(skill);
 
     }
 

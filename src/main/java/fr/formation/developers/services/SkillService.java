@@ -7,6 +7,6 @@ public interface SkillService {
 
     SkillView getById(long id);
 
-    void create(SkillCreate skill);
+    void create(SkillCreate dto);
 
 }

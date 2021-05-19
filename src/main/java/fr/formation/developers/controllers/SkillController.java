@@ -32,8 +32,8 @@ public class SkillController {
 
     /* Create a skill with its field "name" */
     @PostMapping("/skills")
-    public void create(@Valid @RequestBody SkillCreate skill) {
+    public void create(@Valid @RequestBody SkillCreate dto) {
 	System.out.println(" call in controller");
-	service.create(skill);
+	service.create(dto);
     }
 }
