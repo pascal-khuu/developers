@@ -24,21 +24,27 @@ public class DeveloperController {
     }
 
     // Create with all attributes of developer
-    @PostMapping("/developer")
+    @PostMapping("/developers")
     public void create(@Valid @RequestBody DeveloperCreate developer) {
 	System.out.println("call in controller");
 	service.create(developer);
     }
 
     // Access to all attributes of developer with pseudo
-    @GetMapping("developer/{pseudo}")
+    @GetMapping("developers/{pseudo}")
     public DeveloperView getByPseudo(@PathVariable("pseudo") String pseudo) {
 	return service.getByPseudo(pseudo);
     }
 
     // Modify birthdate of a developer by its pseudo
-    @PatchMapping("developer/{pseudo}/birth-date")
+    @PatchMapping("developers/{pseudo}/birth-date")
     public void updateBirthDate(@PathVariable("pseudo") String pseudo, @Valid @RequestBody DeveloperUpdate partial) {
 	service.updateBirthDate(pseudo, partial);
     }
+
+    @GetMapping("developers/find")
+    public DeveloperView find() {
+	return service.find();
+    }
+
 }

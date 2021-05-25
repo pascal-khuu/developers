@@ -11,4 +11,6 @@ public interface DeveloperService {
     DeveloperView getByPseudo(String pseudo);
 
     void updateBirthDate(String pseudo, DeveloperUpdate partial);
+
+    DeveloperView find();
 }

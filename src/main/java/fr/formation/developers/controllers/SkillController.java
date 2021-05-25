@@ -30,6 +30,12 @@ public class SkillController {
 	return service.getById(id);
     }
 
+    /* Access to the name of a skill by its name */
+    @GetMapping("/skills/{name}/by-name")
+    public SkillView getByName(@PathVariable("name") String name) {
+	return service.getByName(name);
+    }
+
     /* Create a skill with its field "name" */
     @PostMapping("/skills")
     public void create(@Valid @RequestBody SkillCreate dto) {

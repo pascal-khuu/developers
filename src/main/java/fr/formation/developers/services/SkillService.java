@@ -9,4 +9,6 @@ public interface SkillService {
 
     void create(SkillCreate dto);
 
+    SkillView getByName(String name);
+
 }

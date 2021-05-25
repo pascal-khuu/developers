@@ -7,7 +7,7 @@ public class DeveloperView {
     // Field "pseudo"
     String pseudo;
     // Field "name"
-    String name;
+    String lastname;
     // Field "firstname"
     String firstname;
     // Field "birthdate"
@@ -27,12 +27,12 @@ public class DeveloperView {
 	this.pseudo = alias;
     }
 
-    public String getName() {
-	return name;
+    public String getLastname() {
+	return lastname;
     }
 
-    public void setName(String name) {
-	this.name = name;
+    public void setLastname(String lastname) {
+	this.lastname = lastname;
     }
 
     public String getFirstname() {
@@ -54,8 +54,8 @@ public class DeveloperView {
     // Redefinition of toString()
     @Override
     public String toString() {
-	return "Developer [alias=" + pseudo + ", name=" + name + ", firstname=" + firstname + ", birthdate=" + birthDate
-		+ "]";
+	return "Developer [alias=" + pseudo + ", name=" + lastname + ", firstname=" + firstname + ", birthdate="
+		+ birthDate + "]";
     }
 
 }

@@ -1,38 +1,42 @@
-package fr.formation.developers.domain.dtos;
+package fr.formation.developers.domain.entities;
 
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotNull;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import fr.formation.developers.validation.BirthDate;
-
-public class DeveloperCreate {
-
+@Entity
+@Table(name = "developers")
+public class Developer {
     // Field "pseudo" (mandatory)
-    @NotNull
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "pseudo")
     String pseudo;
     // Field "name" (mandatory)
-    @NotNull
+    @Column(name = "last_name")
     String lastname;
     // Field "firstname" (mandatory)
-    @NotNull
+    @Column(name = "first_name")
     String firstname;
+
+    @Column(name = "birth_date")
     // Field "birthdate" (mandatory)
-    @BirthDate
     // personal annotation >=18 years
     LocalDate birthDate;
 
-    // Constructor
-    public DeveloperCreate() {
+    public long getId() {
+	return id;
     }
 
-    // Getters and Setters
-
-    // Redefinition of toString()
-    @Override
-    public String toString() {
-	return "Developer [pseudo=" + pseudo + ", lastname=" + lastname + ", firstname=" + firstname + ", birthdate="
-		+ birthDate + "]";
+    public void setId(long id) {
+	this.id = id;
     }
 
     public String getPseudo() {
@@ -65,6 +69,12 @@ public class DeveloperCreate {
 
     public void setBirthDate(LocalDate birthDate) {
 	this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+	return "Developer [id=" + id + ", pseudo=" + pseudo + ", name=" + lastname + ", firstname=" + firstname
+		+ ", birthDate=" + birthDate + "]";
     }
 
 }

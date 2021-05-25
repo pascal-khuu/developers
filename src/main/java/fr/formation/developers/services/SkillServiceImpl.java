@@ -17,10 +17,10 @@ public class SkillServiceImpl implements SkillService {
 
     @Override
     public SkillView getById(long id) {
-	System.out.println(" call in service");
-	SkillView skill = new SkillView();
-	skill.setName("Spring boot " + id);
-	return skill;
+	Skill skill = repository.findById(id).get();
+	SkillView view = new SkillView();
+	view.setName(skill.getName());
+	return view;
     }
 
     @Override
@@ -29,6 +29,14 @@ public class SkillServiceImpl implements SkillService {
 	skill.setName(dto.getName());
 	repository.save(skill);
 
+    }
+
+    @Override
+    public SkillView getByName(String name) {
+	Skill skill = repository.findByName(name).get();
+	SkillView view = new SkillView();
+	view.setName(skill.getName());
+	return view;
     }
 
 }
